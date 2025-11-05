@@ -24,7 +24,7 @@
                 <a href="players.html" class="nav-link text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm md:text-base font-medium">Actorii Principali</a>
                 <a href="tech.html" class="nav-link text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm md:text-base font-medium active">Tehnologia</a>
                 <a href="events.html" class="nav-link text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm md:text-base font-medium">Evenimente Cheie</a>
-                <a href="winner.html" class="nav-link text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm md:text-base font-month">Câștigătorul</a>
+                <a href="winner.html" class="nav-link text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm md:text-base font-medium">Câștigătorul</a>
             </div>
         </nav>
     </header>
@@ -47,6 +47,42 @@
         </section>
 
         <section class="bg-white p-8 rounded-lg shadow-lg mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">💡 De ce era Transmisia marea problemă? O privire tehnică</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Problema nu era doar că DC "pierdea putere", ci <em>de ce</em> o pierdea. Răspunsul stă într-o lege fundamentală a fizicii (Legea lui Joule): <span class="font-bold">P<sub>pierdută</sub> = I<sup>2</sup>R</span>.
+            </p>
+            <ul class="list-disc list-inside space-y-3 mb-6 text-gray-700">
+                <li><span class="font-bold">P<sub>pierdută</sub></span> este Puterea pierdută sub formă de căldură în cabluri.</li>
+                <li><span class="font-bold">I</span> este Curentul (intensitatea).</li>
+                <li><span class="font-bold">R</span> este Rezistența cablului.</li>
+            </ul>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Puterea totală livrată unui client este <span class="font-bold">P<sub>totală</sub> = V &times; I</span> (Tensiune x Curent).
+            </p>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">Problema DC (Edison)</h3>
+            <p class="text-gray-700 leading-relaxed">
+                Sistemul lui Edison funcționa la o tensiune joasă (ex. 110V), sigură pentru case. Dar pentru a livra o putere totală mare, era nevoie de un <strong class="font-bold">curent (I) absolut uriaș</strong> pentru a compensa tensiunea (V) scăzută.
+            </p>
+            <p class="text-gray-700 leading-relaxed mt-3">
+                Conform legii pierderilor, această intensitate uriașă (I) este ridicată la pătrat (I<sup>2</sup>). Rezultatul era o <strong class="font-bold">pierdere masivă de energie</strong> sub formă de căldură. Singura soluție era să scurteze cablurile (necesitând centrale locale) sau să folosească cabluri de cupru extrem de groase și scumpe.
+            </p>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">Soluția AC (Tesla & Westinghouse)</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Sistemul AC a rezolvat această ecuație genial folosind transformatoare:
+            </p>
+            <ol class="list-decimal list-inside space-y-3 mb-6 text-gray-700">
+                <li><span class="font-bold">La centrală:</span> Tensiunea (V) era "urcată" la mii de volți.</li>
+                <li><span class="font-bold">Transmisia:</span> Deoarece V era foarte mare, era nevoie de un <span class="font-bold">curent (I) foarte mic</span> pentru a transmite aceeași putere totală.</li>
+                <li><span class="font-bold">Rezultatul:</span> Cu un curent (I) mic, pierderile (I<sup>2</sup>R) deveneau <span class="font-bold">neglijabile</span>, chiar și pe distanțe lungi.</li>
+                <li><span class="font-bold">La destinație:</span> Un alt transformator "cobora" tensiunea la nivelul sigur de 110V/220V.</li>
+            </ol>
+            <p class="text-gray-700 leading-relaxed mt-4">
+                Această capacitate de a schimba tensiunea a fost asul din mâneca curentului alternativ.
+            </p>
+        </section>
+        <section class="bg-white p-8 rounded-lg shadow-lg mb-8">
             <h2 class="text-2xl font-semibold text-gray-800 mb-4">Invențiile Care Au Făcut AC-ul Viabil</h2>
             <div class="text-gray-700 leading-relaxed space-y-4">
                 <p>
@@ -65,6 +101,47 @@
                 </p>
             </div>
         </section>
+
+        <section class="bg-white p-8 rounded-lg shadow-lg mb-8">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">⚙️ Inovațiile cheie: De la Teorie la Practică</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Este crucial de înțeles <em>de ce</em> aceste invenții fundamentale funcționau doar cu AC.
+            </p>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">Transformatorul: Inima Sistemului AC</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Un transformator funcționează pe principiul <strong class="font-bold">inducției electromagnetice</strong>:
+            </p>
+            <ul class="list-disc list-inside space-y-3 mb-6 text-gray-700">
+                <li>El are două bobine (primară și secundară) pe un miez de fier.</li>
+                <li>Doar un <strong class="font-bold">curent variabil</strong> (alternativ) care trece prin bobina primară poate crea un <strong class="font-bold">câmp magnetic variabil</strong>.</li>
+                <li>Doar un <strong class="font-bold">câmp magnetic variabil</strong> poate "induce" o tensiune în bobina secundară.</li>
+            </ul>
+            <p class="text-gray-700 leading-relaxed">
+                Curentul continuu (DC) creează un câmp magnetic <em>static</em>, <em>constant</em>. Un câmp static nu induce nicio tensiune în a doua bobină, făcând transformatorul complet inutil pentru DC.
+            </p>
+
+            <h3 class="text-xl font-semibold text-gray-800 mb-3 mt-6">Motorul cu Inducție: Calul de bătaie al Industriei</h3>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Motoarele DC aveau o problemă majoră: <strong class="font-bold">periile</strong> și <strong class="font-bold">comutatorul</strong>. Acestea erau contacte mecanice care se uzau repede, produceau scântei și necesitau multă întreținere.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Geniul sistemului <strong class="font-bold">polifazat</strong> al lui Tesla a fost crearea unui <strong class="font-bold">câmp magnetic rotativ</strong> în partea <em>statică</em> a motorului (stator).
+            </p>
+            <div class="my-4">
+                <img src="images/rotating-magnetic-field.gif" 
+                     alt="Animație a unui câmp magnetic rotativ creat de curentul alternativ polifazat."
+                     class="w-full max-w-md mx-auto rounded-md object-contain aspect-video bg-white">
+            </div>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Acest câmp magnetic rotativ "trăgea" pur și simplu rotorul după el prin inducție, fără a fi nevoie de nicio conexiune electrică fizică cu piesa în mișcare. Motorul AC era:
+            </p>
+            <ul class="list-disc list-inside space-y-3 mb-6 text-gray-700">
+                <li><strong class="font-bold">Simplu:</strong> Fără piese de uzură complicate.</li>
+                <li><strong class="font-bold">Fiabil:</strong> Necesita mentenanță minimă.</li>
+                <li><strong class="font-bold">Sigur:</strong> Fără scânteile produse de periile motoarelor DC.</li>
+            </ul>
+        </section>
         <section class="bg-white p-8 rounded-lg shadow-lg mb-8">
             <h2 class="text-2xl font-semibold text-gray-800 mb-4">Bătălia Devine Murdară</h2>
             <div class="text-gray-700 leading-relaxed space-y-3">
@@ -81,8 +158,8 @@
         </section>
     </main>
 
-    <footer class="text-center p-6 text-gray-600 text-sm">
-        <p>O simplă pagină web despre o bucată complexă de istorie.</p>
+    <footer class="text-center p-6 text-white-600 text-sm">
+        <p>Echipa Electropersecutati</p>
     </footer>
 </body>
 </html>

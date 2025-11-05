@@ -9,6 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=IM+Fell+English&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .linked-image {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .linked-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+    </style>
 </head>
 <body class="bg-gray-100 text-gray-900 antialiased">
 
@@ -24,53 +33,113 @@
                 <a href="players.html" class="nav-link text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm md:text-base font-medium active">Actorii Principali</a>
                 <a href="tech.html" class="nav-link text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm md:text-base font-medium">Tehnologia</a>
                 <a href="events.html" class="nav-link text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm md:text-base font-medium">Evenimente Cheie</a>
-                <a href="winner.html" class="nav-link text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm md:text-base font-month">Câștigătorul</a>
+                <a href="winner.html" class="nav-link text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm md:text-base font-medium">Câștigătorul</a>
             </div>
         </nav>
     </header>
 
     <main class="container mx-auto max-w-5xl p-6 mt-6">
         <section class="bg-white p-8 rounded-lg shadow-lg mb-8">
-            <h2 class="text-2xl font-semibold mb-6 text-gray-800">Actorii Principali</h2>
-            <div class="space-y-8">
-                <div class="border border-gray-200 p-6 rounded-lg">
-                    <h3 class="text-xl font-bold mb-3 text-blue-700">Echipa Curent Continuu (DC)</h3>
-                    <p class="text-lg font-semibold">Thomas Edison</p>
-                    <div class="md:flex md:space-x-6">
+            <h2 class="text-2xl font-semibold mb-6 text-gray-800">Taberele Oponente</h2>
+            
+            <div class="border border-gray-200 p-6 rounded-lg mb-8">
+                <h3 class="text-xl font-bold mb-4 text-blue-700">Echipa Curent Continuu (DC)</h3>
+                
+                <div class="md:flex md:space-x-6">
+                    <a href="https://ro.wikipedia.org/wiki/Thomas_Edison" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 mx-auto md:mx-0">
                         <img src="images/edison.jpg" 
                              alt="Un portret alb-negru al lui Thomas Edison."
-                             class="w-32 h-32 rounded-full mx-auto md:mx-0 flex-shrink-0 mb-4 md:mb-0 object-cover bg-gray-200">
-                        <p class="text-gray-700 leading-relaxed">
-                            Deja un inventator de faimă mondială, Edison își construise imperiul pe curentul DC prin compania sa, Edison General Electric. Sistemul său a fost primul care a luminat părți din New York City. El a susținut că DC era mai sigur, deoarece AC folosea tensiuni periculos de mari. Edison a fost un promotor neobosit și un concurent feroce, hotărât să-și protejeze interesele tehnologice și financiare.
+                             class="w-32 h-32 rounded-full mb-4 md:mb-0 object-cover bg-gray-200 border-2 border-blue-700 linked-image">
+                    </a>
+                    <div class="flex-grow">
+                        <a href="https://ro.wikipedia.org/wiki/Thomas_Edison" target="_blank" rel="noopener noreferrer" class="text-lg font-semibold text-gray-900 hover:text-blue-700 transition-colors">Thomas Edison</a>
+                        <p class="text-gray-700 leading-relaxed mt-2">
+                            Deja un inventator de faimă mondială, "Vrăjitorul din Menlo Park", Edison își construise imperiul pe curentul DC prin compania sa, Edison General Electric. Sistemul său a fost primul care a luminat părți din New York City.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mt-2">
+                            El a susținut că DC era mai sigur, deoarece întregul său sistem se baza pe tensiuni joase. Pentru Edison, bătălia era personală și financiară; întregul său imperiu și reputația sa erau investite în tehnologia DC. A fost un promotor neobosit și un concurent feroce, mergând până la a finanța o campanie publică de dezinformare pentru a discredita AC-ul ca fiind letal.
                         </p>
                     </div>
                 </div>
-                <div class="border border-gray-200 p-6 rounded-lg">
-                    <h3 class="text-xl font-bold mb-3 text-red-700">Echipa Curent Alternativ (AC)</h3>
-                    <p class="text-lg font-semibold">Nikola Tesla & George Westinghouse</p>
-                    <div class="md:flex md:space-x-6 mb-6">
+            </div>
+            
+            <div class="border border-gray-200 p-6 rounded-lg">
+                <h3 class="text-xl font-bold mb-4 text-red-700">Echipa Curent Alternativ (AC)</h3>
+                
+                <div class="md:flex md:space-x-6 mb-8 pb-8 border-b border-gray-200">
+                    <a href="https://ro.wikipedia.org/wiki/Nikola_Tesla" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 mx-auto md:mx-0">
                         <img src="images/tesla.jpg" 
                              alt="Un portret alb-negru al lui Nikola Tesla."
-                             class="w-32 h-32 rounded-full mx-auto md:mx-0 flex-shrink-0 mb-4 md:mb-0 object-cover bg-gray-200">
-                        <p class="text-gray-700 leading-relaxed">
-                            <span class="font-bold">Tesla</span>, un inventator genial și fost angajat al lui Edison, a proiectat motorul AC polifazat și sistemele de transformatoare care au făcut posibilă utilizarea curentului alternativ la scară largă. El a fost geniul vizionar din spatele tehnologiei.
+                             class="w-32 h-32 rounded-full mb-4 md:mb-0 object-cover bg-gray-200 border-2 border-red-700 linked-image">
+                    </a>
+                    <div class="flex-grow">
+                        <a href="https://ro.wikipedia.org/wiki/Nikola_Tesla" target="_blank" rel="noopener noreferrer" class="text-lg font-semibold text-gray-900 hover:text-red-700 transition-colors">Nikola Tesla</a>
+                        <p class="text-gray-700 leading-relaxed mt-2">
+                            Un inventator genial și un vizionar, Tesla a fost geniul tehnic din spatele sistemului AC. După ce a lucrat pentru scurt timp (și s-a certat) cu Edison, Tesla a proiectat sistemul polifazat complet (generator, transformator și motor) care a făcut ca AC-ul să fie nu doar viabil, ci mult superior pentru distribuția la scară largă.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mt-2">
+                            Spre deosebire de Edison, Tesla era mai mult un om de știință decât un om de afaceri. El a văzut potențialul AC-ului de a transmite putere pe sute de kilometri, o viziune pe care Edison o respingea.
                         </p>
                     </div>
-                    <div class="md:flex md:space-x-6">
+                </div>
+                
+                <div class="md:flex md:space-x-6">
+                    <a href="https://ro.wikipedia.org/wiki/George_Westinghouse" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 mx-auto md:mx-0">
                         <img src="images/westinghouse.jpg" 
                              alt="Un portret alb-negru al lui George Westinghouse."
-                             class="w-32 h-32 rounded-full mx-auto md:mx-0 flex-shrink-0 mb-4 md:mb-0 object-cover bg-gray-200">
-                        <p class="text-gray-700 leading-relaxed">
-                            <span class="font-bold">Westinghouse</span>, un industriaș și inventator la rândul său, a văzut potențialul imens în proiectele lui Tesla. El a cumpărat brevetele și a oferit flerul în afaceri și sprijinul financiar pentru a construi un imperiu concurent bazat pe AC, gata să conteste dominația lui Edison.
+                             class="w-32 h-32 rounded-full mb-4 md:mb-0 object-cover bg-gray-200 border-2 border-red-700 linked-image">
+                    </a>
+                    <div class="flex-grow">
+                        <a href="https://ro.wikipedia.org/wiki/George_Westinghouse" target="_blank" rel="noopener noreferrer" class="text-lg font-semibold text-gray-900 hover:text-red-700 transition-colors">George Westinghouse</a>
+                        <p class="text-gray-700 leading-relaxed mt-2">
+                            Dacă Tesla a fost vizionarul, Westinghouse a fost industriașul pragmatic care a făcut viziunea posibilă. Deja un inventator și om de afaceri de succes (cunoscut pentru inventarea frânei cu aer pentru trenuri), Westinghouse a recunoscut imediat potențialul brevetelor lui Tesla.
+                        </p>
+                        <p class="text-gray-700 leading-relaxed mt-2">
+                            El i-a cumpărat lui Tesla brevetele pentru sistemul AC și i-a oferit resursele necesare pentru a-l dezvolta. Westinghouse a fost adevăratul rival de afaceri al lui Edison, având capitalul și experința industrială pentru a construi un imperiu concurent bazat pe AC.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
-    </main>
 
-    <footer class="text-center p-6 text-gray-600 text-sm">
-        <p>O simplă pagină web despre o bucată complexă de istorie.</p>
+        <section class="bg-white p-8 rounded-lg shadow-lg mb-8">
+            <h2 class="text-2xl font-semibold mb-6 text-gray-800">Alți Jucători Influenți</h2>
+            <div class="space-y-8">
+
+                <div class="md:flex md:space-x-6">
+                    <a href="https://ro.wikipedia.org/wiki/J._P._Morgan" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 mx-auto md:mx-0">
+                        <img src="images/morgan.jpg" 
+                             alt="Un portret al lui J.P. Morgan."
+                             class="w-32 h-32 rounded-full mb-4 md:mb-0 object-cover bg-gray-200 border-2 border-gray-500 linked-image">
+                    </a>
+                    <div class="flex-grow">
+                        <a href="https://ro.wikipedia.org/wiki/J._P._Morgan" target="_blank" rel="noopener noreferrer" class="text-lg font-semibold text-gray-900 hover:text-gray-600 transition-colors">J.P. Morgan</a>
+                        <p class="text-gray-700 leading-relaxed mt-2">
+                            Bancherul și finanțistul suprem al Epocii de Aur, J.P. Morgan a fost omul din spatele banilor. Inițial, el a finanțat compania lui Edison. Totuși, pe măsură ce războiul devenea costisitor și avantajele AC-ului deveneau clare, Morgan a devenit nerăbdător. În 1892, el a orchestrat fuziunea dintre Edison General Electric și un alt concurent (Thomson-Houston Electric Company) pentru a crea <span class="font-bold">General Electric (GE)</span>. În acest proces, l-a înlăturat pe Thomas Edison din compania pe care acesta o fondase.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="md:flex md:space-x-6">
+                    <a href="https://en.wikipedia.org/wiki/Harold_P._Brown" target="_blank" rel="noopener noreferrer" class="flex-shrink-0 mx-auto md:mx-0">
+                        <img src="images/brown.jpg" 
+                             alt="O imagine istorică a lui Harold P. Brown."
+                             class="w-32 h-32 rounded-full mb-4 md:mb-0 object-cover bg-gray-200 border-2 border-gray-500 linked-image">
+                    </a>
+                    <div class="flex-grow">
+                        <a href="https://en.wikipedia.org/wiki/Harold_P._Brown" target="_blank" rel="noopener noreferrer" class="text-lg font-semibold text-gray-900 hover:text-gray-600 transition-colors">Harold P. Brown (eng.)</a>
+                        <p class="text-gray-700 leading-relaxed mt-2">
+                            Un inginer angajat în secret de Thomas Edison pentru a conduce campania de dezinformare împotriva AC. Brown a organizat demonstrații publice macabre în care electrocuta animale (câini, cai și chiar un elefant) folosind curent alternativ pentru a "dovedi" pericolul acestuia. Munca sa a culminat cu dezvoltarea primului scaun electric, care folosea curent alternativ de la Westinghouse, într-o încercare de a asocia permanent sistemul concurent cu moartea și execuția.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        </main>
+
+    <footer class="text-center p-6 text-white-600 text-sm">
+        <p>Echipa Electropersecutati</p>
     </footer>
 </body>
 </html>

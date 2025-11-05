@@ -7,6 +7,7 @@
     --metal-copper: #8c6a5a;
     --accent-red: #a63a3a;
     --accent-blue: #334e68;
+    --dark-wood: #6d4c41; /* Variabilă nouă pentru rame */
 }
 
 /* 1. Base Fonts & Body */
@@ -14,10 +15,14 @@ html {
     font-family: 'IM Fell English', serif;
     font-size: 1.1rem; /* Slightly larger font for readability */
 }
+
 body {
     background-color: var(--bg-dark-leather);
+    /* WOW: Adăugăm un gradient radial subtil pentru a da profunzime "pielii" */
+    background-image: radial-gradient(ellipse at center, #5e4a3c 0%, var(--bg-dark-leather) 70%);
     color: var(--text-light-parchment);
 }
+
 /* All headings and bold items use the 'Cinzel' display font */
 h1, h2, h3, h4, h5, h6, .font-bold {
     font-family: 'Cinzel', serif;
@@ -32,9 +37,19 @@ header.bg-gray-900 {
     border-bottom: 4px solid #1b110e;
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
+
 header h1 {
-    text-shadow: 2px 2px 0px var(--metal-copper);
+    /* WOW: Umbră de text mai complexă pentru un efect 3D pronunțat */
+    text-shadow: 2px 2px 0px var(--metal-copper), 4px 4px 0px #1b110e;
 }
+
+/* WOW: Stil pentru subtitlul din header */
+header p.text-gray-300 {
+    color: #d7ccc8 !important;
+    text-shadow: 1px 1px 0px rgba(0,0,0,0.6);
+    font-style: italic;
+}
+
 nav.bg-gray-800 {
     background-color: var(--metal-brass);
     background-image: linear-gradient(to right, #d7aA50, #b08a40, #d7aA50);
@@ -49,49 +64,73 @@ nav.bg-gray-800 {
     transition: all 0.2s ease-in-out;
     font-family: 'Cinzel', serif; /* Use heading font for nav */
 }
+
 /* Override Tailwind's specific hover class */
 .nav-link:hover, 
 .nav-link.hover\\:bg-gray-700:hover {
     background-color: #d7aA50 !important; /* Lighter brass */
     color: #000 !important;
+    /* WOW: Adăugăm un "glow" la hover */
+    box-shadow: 0 0 10px rgba(253, 246, 227, 0.7);
 }
+
 .nav-link.active {
     background-color: var(--text-dark-brown) !important; /* Override red-500 */
     color: var(--text-light-parchment) !important;
     text-shadow: none;
-    box-shadow: inset 0 0 5px rgba(0,0,0,0.5); /* "Pressed" look */
+    /* WOW: Umbră "presată" mai pronunțată */
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.7);
 }
 
 /* 4. Main Content (Parchment) */
-/* This targets all the main content sections */
 section.bg-white {
     background-color: var(--bg-parchment);
     color: var(--text-dark-brown);
     border-top: 4px solid var(--metal-copper);
     border-bottom: 4px solid var(--metal-copper);
-    box-shadow: inset 0 0 15px rgba(0,0,0,0.4), 0 5px 10px rgba(0,0,0,0.4);
+    /* WOW: Umbră interioară pentru a simula "îmbătrânirea" marginilor pergamentului */
+    box-shadow: inset 0 0 25px rgba(62, 39, 35, 0.3), 0 5px 15px rgba(0,0,0,0.5);
     border-radius: 0; /* Override Tailwind's rounded-lg */
 }
 
 /* 5. Images (Framed Photos) */
 img {
-    border: 6px solid var(--metal-copper);
+    /* WOW: Ramă mai complexă (lemn închis + inserție de alamă) */
+    border: 8px solid var(--dark-wood);
+    outline: 2px solid var(--metal-brass);
     padding: 3px;
     background: #fff; /* White matting */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5), inset 0 0 5px rgba(0,0,0,0.3);
     border-radius: 2px;
 }
 
 /* 6. Player Cards (Stitched Look) */
 .border.border-gray-200 {
-    border: 2px dashed var(--metal-copper);
+    /* WOW: Am schimbat din "dashed" într-un panou "recesat" */
+    border: 2px solid var(--metal-copper);
     background-color: rgba(255,255,255,0.1);
     background: #f7f3e8; /* Lighter parchment */
     border-radius: 0;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
 }
 /* Make team colors more thematic */
 .text-blue-700 { color: var(--accent-blue) !important; }
 .text-red-700 { color: var(--accent-red) !important; }
+
+/* WOW: Stil pentru link-urile din interiorul secțiunilor */
+section.bg-white a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: 700; /* Folosim 'Cinzel' implicit */
+    border-bottom: 1px dashed var(--accent-blue);
+    transition: all 0.2s ease;
+}
+section.bg-white a:hover {
+    color: var(--accent-red);
+    border-bottom: 1px solid var(--accent-red);
+    background-color: rgba(166, 58, 58, 0.05);
+}
+
 
 /* 7. Timeline (Brass Rivets) */
 #page-events .border-l-2 {
@@ -111,4 +150,21 @@ footer {
     opacity: 0.6;
     font-style: italic;
     padding-top: 2rem;
+    border-top: 1px solid rgba(140, 106, 90, 0.3);
+    margin-top: 2rem;
+}
+
+/* WOW: Scrollbar personalizat pentru un look complet */
+::-webkit-scrollbar {
+    width: 12px;
+    background-color: #1b110e;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--metal-brass);
+    border: 2px solid #1b110e;
+    border-radius: 2px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-dark-leather);
+    border: 1px solid var(--metal-copper);
 }
