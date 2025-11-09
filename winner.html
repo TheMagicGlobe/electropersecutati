@@ -12,7 +12,6 @@
 </head>
 <body class="antialiased">
 
-    <!-- WOW: Preloader HTML -->
     <div id="preloader">
         <div class="gear-container">
             <div class="gear">⚙</div>
@@ -83,48 +82,6 @@
         <p>Echipa Electropersecutati</p>
     </footer>
 
-    <!-- WOW: JavaScript for Preloader and Fade-in-on-Scroll -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-
-            // --- Preloader Logic ---
-            const preloader = document.getElementById('preloader');
-            // Hide preloader once the page is fully loaded
-            window.addEventListener('load', () => {
-                if (preloader) {
-                    preloader.style.opacity = '0';
-                    // Remove it from layout after transition
-                    setTimeout(() => {
-                        preloader.style.display = 'none';
-                    }, 500); // Match CSS transition time
-                }
-            });
-
-            // --- Fade-in-on-Scroll Logic ---
-            const fadeElements = document.querySelectorAll('.fade-in-section');
-
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries, obs) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-visible');
-                            obs.unobserve(entry.target); // Stop observing once it's visible
-                        }
-                    });
-                }, {
-                    threshold: 0.1 // Trigger when 10% of the element is visible
-                });
-
-                fadeElements.forEach(el => {
-                    observer.observe(el);
-                });
-            } else {
-                // Fallback for very old browsers
-                fadeElements.forEach(el => {
-                    el.classList.add('is-visible');
-                });
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
