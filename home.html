@@ -10,7 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=IM+Fell+English&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-100 text-gray-900 antialiased">
+<body class="antialiased">
+
+    <!-- WOW: Preloader HTML -->
+    <div id="preloader">
+        <div class="gear-container">
+            <div class="gear">⚙</div>
+            <div class="gear gear-2">⚙</div>
+            <div class="gear gear-3">⚙</div>
+        </div>
+    </div>
 
     <header class="bg-gray-900 text-white shadow-md">
         <div class="container mx-auto max-w-5xl p-6">
@@ -25,20 +34,23 @@
                 <a href="tech.html" class="nav-link text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm md:text-base font-medium">Tehnologia</a>
                 <a href="events.html" class="nav-link text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm md:text-base font-medium">Evenimente Cheie</a>
                 <a href="winner.html" class="nav-link text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm md:text-base font-medium">Câștigătorul</a>
+                <a href="bibliografie.html" class="nav-link text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm md:text-base font-medium">Bibliografie</a>
             </div>
         </nav>
     </header>
 
     <main class="container mx-auto max-w-5xl p-6 mt-6">
-        <section class="bg-white p-8 rounded-lg shadow-lg mb-8">
-            <h2 class="text-2xl font-semibold mb-4 text-gray-800">Ce a fost Războiul Curenților?</h2>
+        <!-- WOW: Added 'fade-in-section' class for the effect -->
+        <section class="bg-white p-8 rounded-lg shadow-lg mb-8 fade-in-section">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800 text-center">Ce a fost Războiul Curenților?</h2>
             <p class="text-gray-700 leading-relaxed">
                 "Războiul Curenților" a fost o perioadă de rivalitate intensă la sfârșitul anilor 1880, între două sisteme concurente pentru distribuția energiei electrice. De o parte se afla <span class="font-bold">Curentul Continuu (DC)</span>, susținut de Thomas Edison. De cealaltă parte se afla <span class="font-bold">Curentul Alternativ (AC)</span>, sprijinit de George Westinghouse și având la bază tehnologia esențială dezvoltată de Nikola Tesla.
             </p>
             <p class="text-gray-700 leading-relaxed mt-4">
                 Aceasta nu a fost doar o competiție de afaceri prietenoasă; a fost o bătălie publică pentru dominație, implicând dezbateri tehnice, manevre corporative și chiar campanii publice de denigrare. Rezultatul urma să determine viitorul distribuției energiei electrice pentru întreaga lume și să decidă cine va câștiga contracte monumentale, precum cel pentru iluminarea viitoarei Expoziții Mondiale din Chicago din 1893.
             </p>
-            <div class="mt-6">
+            <!-- WOW: Added 'fade-in-section' class for the effect -->
+            <div class="mt-6 fade-in-section">
                 <img src="images/caricatura-razboi.jpg" 
                      alt="O caricatură istorică din 1892 intitulată 'Tesla versus Edison', ilustrând Războiul Curenților."
                      class="w-full max-w-xl mx-auto rounded-md object-cover aspect-video bg-gray-200">
@@ -46,8 +58,53 @@
         </section>
     </main>
 
-    <footer class="text-center p-6 text-white-600 text-sm">
+    <footer class="text-center p-6 text-sm">
         <p>Echipa Electropersecutati</p>
     </footer>
+
+    <!-- WOW: JavaScript for Preloader and Fade-in-on-Scroll -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Preloader Logic ---
+            const preloader = document.getElementById('preloader');
+            // Hide preloader once the page is fully loaded
+            window.addEventListener('load', () => {
+                if (preloader) {
+                    preloader.style.opacity = '0';
+                    // Remove it from layout after transition
+                    setTimeout(() => {
+                        preloader.style.display = 'none';
+                    }, 500); // Match CSS transition time
+                }
+            });
+
+            // --- Fade-in-on-Scroll Logic ---
+            const fadeElements = document.querySelectorAll('.fade-in-section');
+
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            obs.unobserve(entry.target); // Stop observing once it's visible
+                        }
+                    });
+                }, {
+                    threshold: 0.1 // Trigger when 10% of the element is visible
+                });
+
+                fadeElements.forEach(el => {
+                    observer.observe(el);
+                });
+            } else {
+                // Fallback for very old browsers
+                fadeElements.forEach(el => {
+                    el.classList.add('is-visible');
+                });
+            }
+        });
+    </script>
+
 </body>
 </html>

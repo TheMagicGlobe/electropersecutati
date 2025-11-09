@@ -10,7 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=IM+Fell+English&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gray-100 text-gray-900 antialiased">
+<body class="antialiased">
+
+    <!-- WOW: Preloader HTML -->
+    <div id="preloader">
+        <div class="gear-container">
+            <div class="gear">⚙</div>
+            <div class="gear gear-2">⚙</div>
+            <div class="gear gear-3">⚙</div>
+        </div>
+    </div>
 
     <header class="bg-gray-900 text-white shadow-md">
         <div class="container mx-auto max-w-5xl p-6">
@@ -25,13 +34,14 @@
                 <a href="tech.html" class="nav-link text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm md:text-base font-medium active">Tehnologia</a>
                 <a href="events.html" class="nav-link text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm md:text-base font-medium">Evenimente Cheie</a>
                 <a href="winner.html" class="nav-link text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm md:text-base font-medium">Câștigătorul</a>
+                <a href="bibliografie.html" class="nav-link text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-3 rounded-md text-sm md:text-base font-medium">Bibliografie</a>
             </div>
         </nav>
     </header>
 
     <main class="container mx-auto max-w-5xl p-6 mt-6">
-        <section class="bg-white p-8 rounded-lg shadow-lg mb-8">
-            <h2 class="text-2xl font-semibold mb-4 text-gray-800">Diferența de Bază: Transmisia</h2>
+        <section class="bg-white p-8 rounded-lg shadow-lg mb-8 fade-in-section">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800 text-center">Diferența de Bază: Transmisia</h2>
             <p class="text-gray-700 leading-relaxed mb-4">
                 Principalul obstacol tehnic era trimiterea energiei pe distanțe lungi.
             </p>
@@ -39,15 +49,15 @@
                 <li class="text-gray-700"><span class="font-bold text-blue-700">DC (Curent Continuu):</span> Curge într-o singură direcție. Era dificil și ineficient să i se "ridice" sau să i se "coboare" tensiunea. Acest lucru însemna că pierdea multă putere pe distanță, necesitând ca centralele electrice să fie amplasate foarte aproape (la o milă sau două) de client.</li>
                 <li class="text-gray-700"><span class="font-bold text-red-700">AC (Curent Alternativ):</span> Își inversează direcția de mai multe ori pe secundă. Folosind transformatoare, tensiunea curentului alternativ putea fi ușor "ridicată" la niveluri incredibil de înalte pentru transmisie ieftină pe distanțe lungi și apoi "coborâtă" la niveluri mai sigure pentru utilizarea în case și întreprinderi.</li>
             </ul>
-            <div class="mt-6">
+            <div class="mt-6 fade-in-section">
                 <img src="images/ac-dc-diagrama.png" 
                      alt="O diagramă simplă care arată fluxul Curentului Alternativ (AC) și al Curentului Continuu (DC)."
                      class="w-full max-w-lg mx-auto rounded-md object-contain aspect-video bg-white">
             </div>
         </section>
 
-        <section class="bg-white p-8 rounded-lg shadow-lg mb-8">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">💡 De ce era Transmisia marea problemă? O privire tehnică</h2>
+        <section class="bg-white p-8 rounded-lg shadow-lg mb-8 fade-in-section">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">💡 De ce era Transmisia marea problemă?</h2>
             <p class="text-gray-700 leading-relaxed mb-4">
                 Problema nu era doar că DC "pierdea putere", ci <em>de ce</em> o pierdea. Răspunsul stă într-o lege fundamentală a fizicii (Legea lui Joule): <span class="font-bold">P<sub>pierdută</sub> = I<sup>2</sup>R</span>.
             </p>
@@ -82,8 +92,8 @@
                 Această capacitate de a schimba tensiunea a fost asul din mâneca curentului alternativ.
             </p>
         </section>
-        <section class="bg-white p-8 rounded-lg shadow-lg mb-8">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Invențiile Care Au Făcut AC-ul Viabil</h2>
+        <section class="bg-white p-8 rounded-lg shadow-lg mb-8 fade-in-section">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Invențiile Care Au Făcut AC-ul Viabil</h2>
             <div class="text-gray-700 leading-relaxed space-y-4">
                 <p>
                     Avantajul curentului alternativ nu era doar teoretic; el a fost deblocat de două invenții cruciale, ambele perfecționate și brevetate de Nikola Tesla.
@@ -102,8 +112,8 @@
             </div>
         </section>
 
-        <section class="bg-white p-8 rounded-lg shadow-lg mb-8">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">⚙️ Inovațiile cheie: De la Teorie la Practică</h2>
+        <section class="bg-white p-8 rounded-lg shadow-lg mb-8 fade-in-section">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">⚙️ Inovațiile cheie: De la Teorie la Practică</h2>
             <p class="text-gray-700 leading-relaxed mb-4">
                 Este crucial de înțeles <em>de ce</em> aceste invenții fundamentale funcționau doar cu AC.
             </p>
@@ -128,7 +138,7 @@
             <p class="text-gray-700 leading-relaxed mb-4">
                 Geniul sistemului <strong class="font-bold">polifazat</strong> al lui Tesla a fost crearea unui <strong class="font-bold">câmp magnetic rotativ</strong> în partea <em>statică</em> a motorului (stator).
             </p>
-            <div class="my-4">
+            <div class="my-4 fade-in-section">
                 <img src="images/rotating-magnetic-field.gif" 
                      alt="Animație a unui câmp magnetic rotativ creat de curentul alternativ polifazat."
                      class="w-full max-w-md mx-auto rounded-md object-contain aspect-video bg-white">
@@ -142,8 +152,8 @@
                 <li><strong class="font-bold">Sigur:</strong> Fără scânteile produse de periile motoarelor DC.</li>
             </ul>
         </section>
-        <section class="bg-white p-8 rounded-lg shadow-lg mb-8">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Bătălia Devine Murdară</h2>
+        <section class="bg-white p-8 rounded-lg shadow-lg mb-8 fade-in-section">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Bătălia Devine Murdară</h2>
             <div class="text-gray-700 leading-relaxed space-y-3">
                 <p>
                     Pe măsură ce avantajele curentului alternativ deveneau clare, Edison și susținătorii săi au lansat o campanie publică de inducere a fricii pentru a-l discredita. Ei au prezentat curentul alternativ ca fiind periculos de letal și nepotrivit pentru uz casnic.
@@ -158,8 +168,53 @@
         </section>
     </main>
 
-    <footer class="text-center p-6 text-white-600 text-sm">
+    <footer class="text-center p-6 text-sm">
         <p>Echipa Electropersecutati</p>
     </footer>
+
+    <!-- WOW: JavaScript for Preloader and Fade-in-on-Scroll -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- Preloader Logic ---
+            const preloader = document.getElementById('preloader');
+            // Hide preloader once the page is fully loaded
+            window.addEventListener('load', () => {
+                if (preloader) {
+                    preloader.style.opacity = '0';
+                    // Remove it from layout after transition
+                    setTimeout(() => {
+                        preloader.style.display = 'none';
+                    }, 500); // Match CSS transition time
+                }
+            });
+
+            // --- Fade-in-on-Scroll Logic ---
+            const fadeElements = document.querySelectorAll('.fade-in-section');
+
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries, obs) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            obs.unobserve(entry.target); // Stop observing once it's visible
+                        }
+                    });
+                }, {
+                    threshold: 0.1 // Trigger when 10% of the element is visible
+                });
+
+                fadeElements.forEach(el => {
+                    observer.observe(el);
+                });
+            } else {
+                // Fallback for very old browsers
+                fadeElements.forEach(el => {
+                    el.classList.add('is-visible');
+                });
+            }
+        });
+    </script>
+
 </body>
 </html>

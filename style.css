@@ -7,23 +7,91 @@
     --metal-copper: #8c6a5a;
     --accent-red: #a63a3a;
     --accent-blue: #334e68;
-    --dark-wood: #6d4c41; /* Variabilă nouă pentru rame */
+    --dark-wood: #6d4c41;
 }
+
+/* WOW: CSS Animation for electrical flicker */
+@keyframes electric-flicker {
+    0%, 100% { text-shadow: 0 0 2px var(--accent-blue), 0 0 5px var(--accent-blue); }
+    25%, 75% { text-shadow: 0 0 2px var(--accent-blue), 0 0 5px var(--accent-blue), 0 0 10px var(--accent-blue); }
+    50% { text-shadow: 0 0 2px var(--accent-blue), 0 0 8px var(--accent-blue), 0 0 15px #fff; }
+}
+
+/* WOW: CSS for spinning gears preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--bg-dark-leather);
+    background-image: radial-gradient(ellipse at center, #5e4a3c 0%, var(--bg-dark-leather) 70%);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 0.5s ease-out;
+}
+.gear-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+.gear {
+    position: absolute;
+    font-size: 80px;
+    color: var(--metal-brass);
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    animation: spin 8s linear infinite;
+}
+.gear-2 {
+    font-size: 50px;
+    color: var(--metal-copper);
+    animation: spin-reverse 6s linear infinite;
+    top: 15px;
+    left: 45px;
+}
+.gear-3 {
+    font-size: 30px;
+    color: var(--metal-brass);
+    animation: spin 4s linear infinite;
+    top: 50px;
+    left: 10px;
+}
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@keyframes spin-reverse {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(-360deg); }
+}
+
+/* WOW: CSS for fade-in-on-scroll elements */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.fade-in-section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 
 /* 1. Base Fonts & Body */
 html {
     font-family: 'IM Fell English', serif;
-    font-size: 1.1rem; /* Slightly larger font for readability */
+    font-size: 1.1rem;
+    scroll-behavior: smooth; /* Added for smoother scrolling */
 }
 
 body {
     background-color: var(--bg-dark-leather);
-    /* WOW: Adăugăm un gradient radial subtil pentru a da profunzime "pielii" */
     background-image: radial-gradient(ellipse at center, #5e4a3c 0%, var(--bg-dark-leather) 70%);
     color: var(--text-light-parchment);
 }
 
-/* All headings and bold items use the 'Cinzel' display font */
 h1, h2, h3, h4, h5, h6, .font-bold {
     font-family: 'Cinzel', serif;
     font-weight: 700;
@@ -37,19 +105,14 @@ header.bg-gray-900 {
     border-bottom: 4px solid #1b110e;
     box-shadow: 0 4px 10px rgba(0,0,0,0.5);
 }
-
 header h1 {
-    /* WOW: Umbră de text mai complexă pentru un efect 3D pronunțat */
     text-shadow: 2px 2px 0px var(--metal-copper), 4px 4px 0px #1b110e;
 }
-
-/* WOW: Stil pentru subtitlul din header */
 header p.text-gray-300 {
     color: #d7ccc8 !important;
     text-shadow: 1px 1px 0px rgba(0,0,0,0.6);
     font-style: italic;
 }
-
 nav.bg-gray-800 {
     background-color: var(--metal-brass);
     background-image: linear-gradient(to right, #d7aA50, #b08a40, #d7aA50);
@@ -59,26 +122,21 @@ nav.bg-gray-800 {
 
 /* 3. Nav Links (Brass Bar) */
 .nav-link {
-    color: var(--text-dark-brown) !important; /* Override Tailwind's text-gray-300 */
+    color: var(--text-dark-brown) !important;
     text-shadow: 1px 1px 0px rgba(255,255,255,0.2);
-    transition: all 0.2s ease-in-out;
-    font-family: 'Cinzel', serif; /* Use heading font for nav */
+    transition: background-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease; /* Optimized transition */
+    font-family: 'Cinzel', serif;
 }
-
-/* Override Tailwind's specific hover class */
 .nav-link:hover, 
 .nav-link.hover\\:bg-gray-700:hover {
-    background-color: #d7aA50 !important; /* Lighter brass */
+    background-color: #d7aA50 !important;
     color: #000 !important;
-    /* WOW: Adăugăm un "glow" la hover */
     box-shadow: 0 0 10px rgba(253, 246, 227, 0.7);
 }
-
 .nav-link.active {
-    background-color: var(--text-dark-brown) !important; /* Override red-500 */
+    background-color: var(--text-dark-brown) !important;
     color: var(--text-light-parchment) !important;
     text-shadow: none;
-    /* WOW: Umbră "presată" mai pronunțată */
     box-shadow: inset 0 2px 6px rgba(0,0,0,0.7);
 }
 
@@ -88,40 +146,66 @@ section.bg-white {
     color: var(--text-dark-brown);
     border-top: 4px solid var(--metal-copper);
     border-bottom: 4px solid var(--metal-copper);
-    /* WOW: Umbră interioară pentru a simula "îmbătrânirea" marginilor pergamentului */
     box-shadow: inset 0 0 25px rgba(62, 39, 35, 0.3), 0 5px 15px rgba(0,0,0,0.5);
-    border-radius: 0; /* Override Tailwind's rounded-lg */
+    border-radius: 0;
 }
+
+/* WOW: "Mechanical" Headings */
+section.bg-white h2 {
+    position: relative;
+    display: inline-block;
+    padding: 0 1em;
+}
+section.bg-white h2::before,
+section.bg-white h2::after {
+    content: '⚙';
+    font-family: 'IM Fell English', serif; /* Use a font that has the gear */
+    color: var(--metal-brass);
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+    font-size: 0.8em;
+    position: relative;
+    top: -2px;
+}
+section.bg-white h2::before {
+    margin-right: 0.5em;
+}
+section.bg-white h2::after {
+    margin-left: 0.5em;
+}
+
 
 /* 5. Images (Framed Photos) */
 img {
-    /* WOW: Ramă mai complexă (lemn închis + inserție de alamă) */
     border: 8px solid var(--dark-wood);
     outline: 2px solid var(--metal-brass);
     padding: 3px;
-    background: #fff; /* White matting */
+    background: #fff;
     box-shadow: 0 5px 15px rgba(0,0,0,0.5), inset 0 0 5px rgba(0,0,0,0.3);
     border-radius: 2px;
+}
+img.rounded-full {
+    border: 4px solid var(--dark-wood);
+    outline: 2px solid var(--metal-brass);
+    padding: 2px;
+    background: var(--bg-parchment);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
 /* 6. Player Cards (Stitched Look) */
 .border.border-gray-200 {
-    /* WOW: Am schimbat din "dashed" într-un panou "recesat" */
     border: 2px solid var(--metal-copper);
-    background-color: rgba(255,255,255,0.1);
-    background: #f7f3e8; /* Lighter parchment */
+    background: #f7f3e8;
     border-radius: 0;
     box-shadow: inset 0 0 8px rgba(0,0,0,0.2);
 }
-/* Make team colors more thematic */
 .text-blue-700 { color: var(--accent-blue) !important; }
 .text-red-700 { color: var(--accent-red) !important; }
 
-/* WOW: Stil pentru link-urile din interiorul secțiunilor */
+/* WOW: "Electrical" Links */
 section.bg-white a {
     color: var(--accent-blue);
     text-decoration: none;
-    font-weight: 700; /* Folosim 'Cinzel' implicit */
+    font-weight: 700;
     border-bottom: 1px dashed var(--accent-blue);
     transition: all 0.2s ease;
 }
@@ -129,6 +213,8 @@ section.bg-white a:hover {
     color: var(--accent-red);
     border-bottom: 1px solid var(--accent-red);
     background-color: rgba(166, 58, 58, 0.05);
+    /* Apply flicker animation */
+    animation: electric-flicker 0.7s infinite;
 }
 
 
@@ -138,10 +224,10 @@ section.bg-white a:hover {
     border-width: 3px;
 }
 #page-events .absolute.bg-red-500 {
-    background-color: var(--metal-brass) !important; /* Override red */
+    background-color: var(--metal-brass) !important;
     border: 2px solid var(--text-dark-brown);
     box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    left: -10px !important; /* Adjust position for thicker border */
+    left: -10px !important;
 }
 
 /* 8. Footer */
@@ -154,7 +240,7 @@ footer {
     margin-top: 2rem;
 }
 
-/* WOW: Scrollbar personalizat pentru un look complet */
+/* 9. Scrollbar */
 ::-webkit-scrollbar {
     width: 12px;
     background-color: #1b110e;
